@@ -105,7 +105,7 @@ const mockData = {
     ],
   },
   insurance: {
-    providers: [
+    insuranceProviders: [
       { name: 'Delta Dental', logo: '/logos/delta-dental.svg' },
       { name: 'Aetna', logo: '/logos/aetna.svg' },
       { name: 'Cigna', logo: '/logos/cigna.svg' },
