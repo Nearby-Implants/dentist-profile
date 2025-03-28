@@ -1,15 +1,34 @@
-import ProfileHeader from '../components/ProfileHeader';
+import Header from '@/components/Header';
 import ServicesSection from '../components/ServicesSection';
 import ExperienceEducation from '../components/ExperienceEducation';
 
 const mockData = {
+  images: [
+    {
+      id: '1',
+      src: '/images/clinic-1.jpg',
+      alt: 'Modern dental clinic reception',
+      caption: 'Our state-of-the-art facility'
+    },
+    {
+      id: '2',
+      src: '/images/clinic-2.jpg',
+      alt: 'Treatment room',
+      caption: 'Advanced treatment rooms with the latest technology'
+    },
+    {
+      id: '3',
+      src: '/images/team.jpg',
+      alt: 'Dental team',
+      caption: 'Our experienced dental care team'
+    }
+  ],
   profile: {
     name: "Dr. Emily Thompson",
+    specialization: "Oral & Maxillofacial Surgery",
+    yearsOfExperience: 15,
     rating: 4.8,
-    reviewCount: 127,
-    startingPrice: "$150",
-    profileImage: "/profile-placeholder.jpg",
-    specialty: "Cosmetic & Restorative Dentistry"
+    reviewCount: 120
   },
   services: [
     {
@@ -72,10 +91,12 @@ const mockData = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 py-8">
+    <main className="min-h-screen bg-gray-50">
+      <Header 
+        images={mockData.images}
+        profile={mockData.profile}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
-        <ProfileHeader {...mockData.profile} />
-        
         <ServicesSection services={mockData.services} />
         
         <ExperienceEducation 
