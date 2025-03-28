@@ -24,10 +24,10 @@ const mockData = {
       year: 2008,
     },
     specializations: [
-      'Cosmetic Dentistry',
-      'Orthodontics',
-      'Periodontics',
-      'Endodontics',
+      { name: 'Cosmetic Dentistry', primary: true },
+      { name: 'Orthodontics' },
+      { name: 'Periodontics' },
+      { name: 'Endodontics' },
     ],
   },
   practice: {
