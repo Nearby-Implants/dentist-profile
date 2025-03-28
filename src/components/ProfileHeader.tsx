@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { motion } from 'framer-motion';
