@@ -7,6 +7,13 @@ interface BusinessHours {
   hours: string;
 }
 
+interface Image {
+  id: string;
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 interface PracticeInfoProps {
   name: string;
   address: string;
@@ -14,7 +21,7 @@ interface PracticeInfoProps {
   email: string;
   businessHours: BusinessHours[];
   features: string[];
-  images: string[];
+  images: Image[];
 }
 
 export default function PracticeInfo({
@@ -81,13 +88,18 @@ export default function PracticeInfo({
       <div className="space-y-4">
         <h3 className="text-lg font-medium text-gray-900">Clinic Photos</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((image, index) => (
-            <div key={index} className="aspect-w-16 aspect-h-9">
+          {images.map((image) => (
+            <div key={image.id} className="aspect-w-16 aspect-h-9">
               <img
-                src={image}
-                alt={`Clinic photo ${index + 1}`}
+                src={image.src}
+                alt={image.alt}
                 className="object-cover rounded-lg"
               />
+              {image.caption && (
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                  {image.caption}
+                </div>
+              )}
             </div>
           ))}
         </div>
