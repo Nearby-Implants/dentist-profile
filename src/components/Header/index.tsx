@@ -3,28 +3,22 @@
 import ImageCarousel from './ImageCarousel';
 import ProfileInfo from './ProfileInfo';
 
-interface Category {
-  name: string;
-  primary?: boolean;
-}
-
 interface HeaderProps {
+  name: string;
+  title: string;
+  categories: string[];
+  experience: number;
+  rating: number;
+  reviewCount: number;
   images: Array<{
     id: string;
     src: string;
     alt: string;
     caption?: string;
   }>;
-  profile: {
-    name: string;
-    categories: Category[];
-    yearsOfExperience: number;
-    rating: number;
-    reviewCount: number;
-  };
 }
 
-const Header = ({ images, profile }: HeaderProps) => {
+const Header = ({ name, title, categories, experience, rating, reviewCount, images }: HeaderProps) => {
   const handleCallClick = () => {
     // Implement call functionality
     console.log('Call clicked');
@@ -44,7 +38,12 @@ const Header = ({ images, profile }: HeaderProps) => {
     <div className="space-y-6">
       <ImageCarousel images={images} />
       <ProfileInfo
-        {...profile}
+        name={name}
+        title={title}
+        categories={categories}
+        experience={experience}
+        rating={rating}
+        reviewCount={reviewCount}
         onCallClick={handleCallClick}
         onBookClick={handleBookClick}
         onInquiryClick={handleInquiryClick}

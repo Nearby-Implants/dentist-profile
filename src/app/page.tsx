@@ -53,9 +53,24 @@ const mockData = {
       'Child-friendly Environment',
     ],
     images: [
-      '/images/clinic-1.jpg',
-      '/images/clinic-2.jpg',
-      '/images/clinic-3.jpg',
+      {
+        id: '1',
+        src: '/images/clinic-1.jpg',
+        alt: 'Modern dental clinic reception',
+        caption: 'Our state-of-the-art facility'
+      },
+      {
+        id: '2',
+        src: '/images/clinic-2.jpg',
+        alt: 'Treatment room',
+        caption: 'Advanced treatment rooms with the latest technology'
+      },
+      {
+        id: '3',
+        src: '/images/clinic-3.jpg',
+        alt: 'Dental team',
+        caption: 'Our experienced dental care team'
+      }
     ],
   },
   services: {
