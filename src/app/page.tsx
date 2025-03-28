@@ -1,6 +1,6 @@
-import ProfileHeader from '@/components/ProfileHeader';
-import ServicesSection from '@/components/ServicesSection';
-import ExperienceEducation from '@/components/ExperienceEducation';
+import ProfileHeader from '../components/ProfileHeader';
+import ServicesSection from '../components/ServicesSection';
+import ExperienceEducation from '../components/ExperienceEducation';
 
 const mockData = {
   profile: {
