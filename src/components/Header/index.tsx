@@ -3,10 +3,15 @@
 import ImageCarousel from './ImageCarousel';
 import ProfileInfo from './ProfileInfo';
 
+interface Category {
+  name: string;
+  primary?: boolean;
+}
+
 interface HeaderProps {
   name: string;
   title: string;
-  categories: string[];
+  categories: Category[];
   experience: number;
   rating: number;
   reviewCount: number;
