@@ -3,6 +3,11 @@
 import ImageCarousel from './ImageCarousel';
 import ProfileInfo from './ProfileInfo';
 
+interface Category {
+  name: string;
+  primary?: boolean;
+}
+
 interface HeaderProps {
   images: Array<{
     id: string;
@@ -12,7 +17,7 @@ interface HeaderProps {
   }>;
   profile: {
     name: string;
-    specialization: string;
+    categories: Category[];
     yearsOfExperience: number;
     rating: number;
     reviewCount: number;
@@ -36,7 +41,7 @@ const Header = ({ images, profile }: HeaderProps) => {
   };
 
   return (
-    <header className="relative">
+    <div className="space-y-6">
       <ImageCarousel images={images} />
       <ProfileInfo
         {...profile}
@@ -47,22 +52,22 @@ const Header = ({ images, profile }: HeaderProps) => {
       
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-white shadow-up p-4 md:hidden z-50">
-        <div className="flex gap-2">
+        <div className="flex gap-2 container mx-auto max-w-5xl">
           <button
             onClick={handleCallClick}
-            className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
+            className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
           >
             Call Now
           </button>
           <button
             onClick={handleBookClick}
-            className="flex-1 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition-colors"
+            className="flex-1 bg-green-600 text-white px-4 py-3 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors shadow-sm"
           >
-            Book
+            Book Consultation
           </button>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 
