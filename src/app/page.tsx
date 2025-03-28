@@ -127,7 +127,7 @@ const mockData = {
   reviews: {
     averageRating: 4.8,
     totalReviews: 127,
-    list: [
+    reviews: [
       {
         id: '1',
         patientName: 'Sarah Johnson',
